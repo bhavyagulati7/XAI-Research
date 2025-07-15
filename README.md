@@ -1,95 +1,53 @@
-Intrusion Detection using Deep Learning on NSL-KDD and TON_IoT Datasets
-This project explores deep learning-based intrusion detection systems (IDS) using two benchmark datasets: NSL-KDD and TON_IoT. The goal is to build, train, and evaluate robust models for network anomaly detection in both traditional and IoT-based environments.
+# Intrusion Detection using Deep Learning on NSL-KDD and TON_IoT Datasets
 
-🔍 Datasets Used
-1. NSL-KDD
-A refined version of the KDD’99 dataset, addressing redundancy and imbalance issues.
+This project explores deep learning–based intrusion detection systems (IDS) using two benchmark datasets: **NSL-KDD** and **TON_IoT**. The goal is to build, train, and evaluate robust models for network anomaly detection in both traditional and IoT-based environments.
 
-Used for benchmarking IDS models in traditional network settings.
+## 🔍 Datasets Used
 
-2. TON_IoT
-A modern dataset capturing telemetry from IoT/IIoT devices.
+### 1. NSL-KDD
+- A refined version of the KDD’99 dataset, addressing redundancy and class imbalance.
+- Benchmark for IDS models in traditional network settings.
 
-Contains multiple attack categories targeting smart environments.
+### 2. TON_IoT
+- Modern dataset capturing telemetry from IoT/IIoT devices.
+- Multiple attack categories targeting smart environments.
 
-🧠 Models & Methodology
-Common Approach:
-Data preprocessing: label encoding, normalization, and train-test splits.
+## 🧠 Models & Methodology
 
-Model training using deep learning (MLP-based architectures).
+### Common Steps
+1. **Data preprocessing**: label encoding, normalization, train-test split  
+2. **Model training**: MLP architectures implemented in TensorFlow/Keras  
+3. **Evaluation metrics**: Accuracy, Precision, Recall, F1‑score, Confusion Matrix  
 
-Evaluation using metrics like Accuracy, Precision, Recall, F1-score, and Confusion Matrix.
+### NSL-KDD
+- **Architecture**: 3 hidden layers + dropout  
+- **Optimization**: early stopping on validation loss  
+- **Results**:
+  - Accuracy: **99.32%**
+  - F1 Score: **0.993**
 
-NSL-KDD:
-Trained an MLP classifier with:
+### TON_IoT
+- **Task**: binary classification (normal vs. attack)  
+- **Architecture**: 4 dense layers + dropout, binary cross‑entropy loss  
+- **Results**:
+  - Accuracy: **99.85%**
+  - F1 Score: **0.998**
 
-3 hidden layers, dropout regularization.
+## 📊 Evaluation Summary
 
-Early stopping based on validation loss.
+| Dataset   | Accuracy | Precision | Recall | F1 Score |
+|-----------|----------|-----------|--------|----------|
+| NSL-KDD   | 99.32%   | 0.993     | 0.993  | 0.993    |
+| TON_IoT   | 99.85%   | 0.999     | 0.998  | 0.998    |
 
-Achieved:
+## 🛠️ Dependencies
 
-Accuracy: 99.32%
+- Python ≥ 3.7  
+- TensorFlow / Keras  
+- NumPy, Pandas, Scikit‑learn  
+- Matplotlib, Seaborn  
 
-F1 Score: 0.993
+Install dependencies:
 
-High precision and recall across all classes.
-
-TON_IoT:
-Binary classification of normal vs attack traffic.
-
-Preprocessed CSV logs from telemetry sources.
-
-Model architecture:
-
-4 dense layers with ReLU activation and dropout.
-
-Binary cross-entropy loss.
-
-Achieved:
-
-Accuracy: 99.85%
-
-F1 Score: 0.998
-
-📊 Evaluation
-Dataset	Accuracy	Precision	Recall	F1 Score
-NSL-KDD	99.32%	0.993	0.993	0.993
-TON_IoT	99.85%	0.999	0.998	0.998
-
-Confusion matrices show minimal false positives/negatives.
-
-Models generalize well to unseen test data.
-
-🛠️ Dependencies
-Python ≥ 3.7
-
-TensorFlow / Keras
-
-NumPy, Pandas, Scikit-learn
-
-Matplotlib, Seaborn
-
-Install via:
-
-bash
-Copy
-Edit
+```bash
 pip install -r requirements.txt
-📁 Structure
-bash
-Copy
-Edit
-├── final_model_nsl_kdd.ipynb     # NSL-KDD Model Training and Evaluation
-├── Ton_Iot_Run_final_results.ipynb  # TON_IoT Model Training and Evaluation
-├── README.md
-└── requirements.txt              # Dependencies (to be added)
-🚀 Future Work
-Integrate real-time detection pipeline.
-
-Expand to multi-class detection on TON_IoT.
-
-Compare with classical ML algorithms for baseline benchmarking.
-
-📌 Citation
-If you use this work, please cite the relevant datasets and credit this repository.
