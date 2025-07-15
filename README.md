@@ -47,7 +47,3 @@ This project explores deep learning–based intrusion detection systems (IDS) us
 - NumPy, Pandas, Scikit‑learn  
 - Matplotlib, Seaborn  
 
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
